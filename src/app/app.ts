@@ -1,12 +1,21 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+
+interface Type {
+  one?: {
+    two: {
+      three: {
+        array?: {
+          name: string;
+        }[];
+      };
+    };
+  };
+}
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('ng-22-1');
+  readonly type = signal<Type>({});
 }
